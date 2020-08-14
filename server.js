@@ -1,12 +1,11 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-app.use(express.static('public'));
-const http = require('http');
-app.get("/", (request, response) => {
-response.sendStatus(200); 
+
+app.listen(() => console.log("start btrolie"));
+
+app.use('/ping', (req, res) => {
+  res.send(new Date());
 });
-setInterval(() => {
-http.get(`https://.glitch.me`); 
-}, 280000); 
+
 var shell = require('shelljs'); 
-shell.exec('java -jar JMusicBot-0.2.9.jar')
+shell.exec('java -jar JMusicBot-0.2.10.jar')
